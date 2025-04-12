@@ -98,3 +98,10 @@ async function getAcresses(ids: number[]): Promise<(Actress | null)[]> {
     return [];
   }
 }
+
+function createActress(data: Omit<Actress, "id">): Actress {
+  return {
+    ...data,
+    id: Math.floor(Math.random() * 1000),
+  };
+}
